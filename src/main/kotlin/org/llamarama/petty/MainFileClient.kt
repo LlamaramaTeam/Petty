@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.username.modid
+package org.llamarama.petty
 
 import net.fabricmc.api.ClientModInitializer
 import net.fabricmc.api.EnvType

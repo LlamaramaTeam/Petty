@@ -22,7 +22,9 @@ version = modVersion
 group = mavenGroup
 
 minecraft {}
-repositories {}
+repositories {
+    mavenCentral()
+}
 
 // dependency: kotlin(a,b) | String
 fun DependencyHandlerScope.includeModApi(dependency: Any) {
@@ -43,13 +45,16 @@ dependencies {
     //modImplementation("net.fabricmc:fabric-language-kotlin:$fabricKotlinVersion")
     // Own Language Adapter (Entry classes must be an object!)
     // Kotlin libs
+
+    // ugh idk if we need all of that but we can keep it for now
+    //     and delete if it causes errors/we dont need it anymore
     includeModApi(kotlin("stdlib", kotlinVersion))
     includeModApi(kotlin("stdlib-jdk8", kotlinVersion))
     includeModApi(kotlin("stdlib-jdk7", kotlinVersion))
     includeModApi(kotlin("reflect", kotlinVersion))
-    includeModApi("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
-    includeModApi("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.5.2")
-    includeModApi("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.5.2")
+    includeModApi("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
+    includeModApi("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.0")
+    includeModApi("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.6.0")
 }
 
 tasks {

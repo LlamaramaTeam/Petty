@@ -1,8 +1,8 @@
 @file:Suppress("SameParameterValue", "MemberVisibilityCanBePrivate")
 
-package com.username.modid.blocks
+package org.llamarama.petty.blocks
 
-import com.username.modid.MainFile
+import org.llamarama.petty.MainFile
 import net.minecraft.block.AbstractBlock
 import net.minecraft.block.Block
 import net.minecraft.block.Blocks
@@ -36,11 +36,11 @@ object ModIdBlocks {
     }
 
     fun registerBlocks() {
-        this.BlockRegistry.forEach {
+        BlockRegistry.forEach {
             Registry.register(Registry.BLOCK, Identifier(MainFile.MOD_ID, it.key), it.value)
         }
         fun registerBlockItems() {
-            this.BlockItemsRegistry.forEach {
+            BlockItemsRegistry.forEach {
                 Registry.register(Registry.ITEM, Identifier(MainFile.MOD_ID, it.key), it.value)
 
             }

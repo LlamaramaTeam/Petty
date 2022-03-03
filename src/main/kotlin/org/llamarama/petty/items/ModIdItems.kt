@@ -1,8 +1,8 @@
 @file:Suppress("SameParameterValue", "MemberVisibilityCanBePrivate")
 
-package com.username.modid.items
+package org.llamarama.petty.items
 
-import com.username.modid.MainFile
+import org.llamarama.petty.MainFile
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroup
 import net.minecraft.util.Identifier
@@ -27,7 +27,7 @@ object ModIdItems {
     }
 
     fun registerItems() {
-        this.ItemRegistry.forEach {
+        ItemRegistry.forEach {
             Registry.register(Registry.ITEM, Identifier(MainFile.MOD_ID, it.key), it.value)
         }
     }

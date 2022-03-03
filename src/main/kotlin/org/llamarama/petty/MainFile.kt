@@ -1,7 +1,7 @@
-package com.username.modid
+package org.llamarama.petty
 
-import com.username.modid.blocks.ModIdBlocks
-import com.username.modid.items.ModIdItems
+import org.llamarama.petty.blocks.ModIdBlocks
+import org.llamarama.petty.items.ModIdItems
 import net.fabricmc.api.ModInitializer
 
 
@@ -13,7 +13,7 @@ import net.fabricmc.api.ModInitializer
  */
 @Suppress("UNUSED")
 object MainFile : ModInitializer {
-    const val MOD_ID = "mod_id"
+    const val MOD_ID = "petty"
 
 
     override fun onInitialize() {

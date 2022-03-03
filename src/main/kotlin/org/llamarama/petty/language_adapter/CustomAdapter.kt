@@ -1,6 +1,6 @@
 @file:Suppress("unused")
 
-package com.username.modid.language_adapter
+package org.llamarama.petty.language_adapter
 
 import net.fabricmc.loader.api.LanguageAdapter
 import net.fabricmc.loader.api.ModContainer
