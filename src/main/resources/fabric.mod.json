@@ -17,19 +17,19 @@
   "icon": "assets/modid/icon.png",
   "environment": "*",
   "languageAdapters": {
-    "custom": "com.username.modid.language_adapter.CustomAdapter"
+    "custom": "org.llamarama.petty.language_adapter.CustomAdapter"
   },
   "entrypoints": {
     "main": [
       {
         "adapter": "custom",
-        "value": "com.username.modid.MainFile"
+        "value": "org.llamarama.petty.MainFile"
       }
     ],
     "client": [
       {
         "adapter": "custom",
-        "value": "com.username.modid.MainFileClient"
+        "value": "org.llamarama.petty.MainFileClient"
       }
     ]
   },
