@@ -17,6 +17,7 @@ object ModIdBlocks {
     private val BlockRegistry = linkedMapOf<String, Block>()
 
     val COOL_BLOCK: Block
+    val BIRD_CAGE: CageBlock
 
     /**
      * Register blocks in here.
@@ -25,6 +26,7 @@ object ModIdBlocks {
      */
     init {
         COOL_BLOCK = addBlock("coolblock", Block(AbstractBlock.Settings.copy(Blocks.STONE)))
+        BIRD_CAGE = addSpecialItemBlock("cage_block", CageBlock(AbstractBlock.Settings.copy(Blocks.BAMBOO).breakInstantly()))
     }
 
     private fun <B: Block> addBlock(name: String, block: B): B {
@@ -32,6 +34,12 @@ object ModIdBlocks {
         BlockRegistry[correctedName] = block
         BlockItemsRegistry[correctedName + "_item"] =
             (BlockItem(block, Item.Settings().maxCount(64).group(ItemGroup.MISC)))
+        return block
+    }
+
+    private fun <B: Block> addSpecialItemBlock(name: String, block: B): B {
+        val correctedName = name.replace(" ", "").lowercase().trim()
+        BlockRegistry[correctedName] = block
         return block
     }
 

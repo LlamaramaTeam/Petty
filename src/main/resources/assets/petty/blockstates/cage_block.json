@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "half=lower": {
+      "model": "petty:block/cage_lower"
+    },
+    "half=upper": {
+      "model": "petty:block/cage_upper"
+    }
+  }
+}
