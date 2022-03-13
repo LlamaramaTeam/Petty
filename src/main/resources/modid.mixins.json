@@ -1,11 +1,13 @@
 {
   "required": true,
-  "package": "com.username.modid.mixins",
+  "package": "org.llamarama.petty.mixins",
   "compatibilityLevel": "JAVA_17",
   "injectors": {
     "defaultRequire": 1
   },
-  "mixins": [],
+  "mixins": [
+    "LivingEntityMixin"
+  ],
   "client": [],
   "server": []
 }
