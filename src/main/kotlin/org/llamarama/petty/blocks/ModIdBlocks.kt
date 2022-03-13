@@ -26,7 +26,7 @@ object ModIdBlocks {
      */
     init {
         COOL_BLOCK = addBlock("coolblock", Block(AbstractBlock.Settings.copy(Blocks.STONE)))
-        BIRD_CAGE = addSpecialItemBlock("cage_block", CageBlock(AbstractBlock.Settings.copy(Blocks.SPAWNER)))
+        BIRD_CAGE = addSpecialItemBlock("cage_block", CageBlock(AbstractBlock.Settings.copy(Blocks.BAMBOO).breakInstantly()))
     }
 
     private fun <B: Block> addBlock(name: String, block: B): B {
