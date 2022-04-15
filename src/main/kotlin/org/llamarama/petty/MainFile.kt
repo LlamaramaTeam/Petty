@@ -1,8 +1,9 @@
 package org.llamarama.petty
 
-import org.llamarama.petty.blocks.ModIdBlocks
-import org.llamarama.petty.items.ModIdItems
+import org.llamarama.petty.blocks.PettyBlocks
+import org.llamarama.petty.items.PettyItems
 import net.fabricmc.api.ModInitializer
+import org.llamarama.petty.worldgen.decorators.DecoratorTypes
 
 
 /**
@@ -17,7 +18,8 @@ object MainFile : ModInitializer {
 
 
     override fun onInitialize() {
-        ModIdBlocks.registerBlocks()
-        ModIdItems.registerItems()
+        PettyBlocks.registerBlocks()
+        PettyItems.registerItems()
+        DecoratorTypes
     }
 }

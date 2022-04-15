@@ -8,7 +8,7 @@ import net.minecraft.item.ItemGroup
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 
-object ModIdItems {
+object PettyItems {
     private val ItemRegistry = linkedMapOf<String, Item>()
 
     val COOL_ITEM: Item
@@ -20,7 +20,7 @@ object ModIdItems {
         COOL_ITEM = addItem("coolitem", Item(Item.Settings().maxCount(64).group(ItemGroup.MISC)))
     }
 
-    private fun <I: Item> addItem(name: String, item: I): I {
+    private fun  addItem(name: String, item: Item): Item {
         val correctedName = name.replace(" ", "").lowercase().trim()
         ItemRegistry[correctedName] = item
         return item
