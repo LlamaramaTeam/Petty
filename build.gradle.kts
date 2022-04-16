@@ -52,9 +52,9 @@ dependencies {
     includeModApi(kotlin("stdlib-jdk8", kotlinVersion))
     includeModApi(kotlin("stdlib-jdk7", kotlinVersion))
     includeModApi(kotlin("reflect", kotlinVersion))
-    includeModApi("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
-    includeModApi("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.0")
-    includeModApi("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.6.0")
+    includeModApi("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
+    includeModApi("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.1")
+    includeModApi("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.6.1")
 }
 
 tasks {

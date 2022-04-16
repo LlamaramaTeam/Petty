@@ -10,7 +10,7 @@ import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 import org.llamarama.petty.blocks.ModIdBlocks
 
-object ModIdItems {
+object PettyItems {
     private val ItemRegistry = linkedMapOf<String, Item>()
 
     val COOL_ITEM: Item
@@ -27,15 +27,15 @@ object ModIdItems {
 
     }
 
-    private fun <I: Item> addItem(name: String, item: I): I {
+    private fun addItem(name: String, item: Item): Item {
         val correctedName = name.replace(" ", "").lowercase().trim()
         ItemRegistry[correctedName] = item
         return item
     }
 
     fun registerItems() {
-        ItemRegistry.forEach {
-            Registry.register(Registry.ITEM, Identifier(MainFile.MOD_ID, it.key), it.value)
+        ItemRegistry.forEach { (name, item) ->
+            Registry.register(Registry.ITEM, Identifier(MainFile.MOD_ID, name), item)
         }
     }
 }

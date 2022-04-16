@@ -1,5 +1,3 @@
-@file:Suppress("unused")
-
 package org.llamarama.petty
 
 import net.fabricmc.api.ClientModInitializer
@@ -11,7 +9,6 @@ import org.llamarama.petty.blocks.ModIdBlocks
 
 @Environment(EnvType.CLIENT)
 object MainFileClient : ClientModInitializer {
-
 
     override fun onInitializeClient() {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), ModIdBlocks.BIRD_CAGE)
