@@ -12,7 +12,7 @@ import net.minecraft.item.ItemGroup
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
 
-object ModIdBlocks {
+object PettyBlocks {
     private val BlockItemsRegistry = linkedMapOf<String, Item>()
     private val BlockRegistry = linkedMapOf<String, Block>()
 
@@ -27,7 +27,7 @@ object ModIdBlocks {
         COOL_BLOCK = addBlock("coolblock", Block(AbstractBlock.Settings.copy(Blocks.STONE)))
     }
 
-    private fun <B: Block> addBlock(name: String, block: B): B {
+    private fun addBlock(name: String, block: Block): Block {
         val correctedName = name.replace(" ", "").lowercase().trim()
         BlockRegistry[correctedName] = block
         BlockItemsRegistry[correctedName + "_item"] =
@@ -36,15 +36,12 @@ object ModIdBlocks {
     }
 
     fun registerBlocks() {
-        BlockRegistry.forEach {
-            Registry.register(Registry.BLOCK, Identifier(MainFile.MOD_ID, it.key), it.value)
+        BlockRegistry.forEach { (name, block) ->
+            Registry.register(Registry.BLOCK, Identifier(MainFile.MOD_ID, name), block)
         }
-        fun registerBlockItems() {
-            BlockItemsRegistry.forEach {
-                Registry.register(Registry.ITEM, Identifier(MainFile.MOD_ID, it.key), it.value)
+        BlockItemsRegistry.forEach { (name, item) ->
+            Registry.register(Registry.ITEM, Identifier(MainFile.MOD_ID, name), item)
 
-            }
         }
-        registerBlockItems()
     }
 }
