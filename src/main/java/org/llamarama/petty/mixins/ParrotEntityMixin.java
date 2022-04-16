@@ -6,6 +6,7 @@ import net.minecraft.entity.passive.ParrotEntity;
 import net.minecraft.entity.passive.TameableShoulderEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.text.Text;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.Hand;
 import net.minecraft.util.ItemScatterer;
@@ -32,6 +33,7 @@ public abstract class ParrotEntityMixin extends TameableShoulderEntity implement
         BlockPos cagePos = this.getBlockPos();
         if (player.getStackInHand(hand).isOf(ModIdBlocks.INSTANCE.getBIRD_CAGE().asItem())) {
             if (this.isSitting() || this.isInSittingPose()) {
+                if (player.getStackInHand(hand).hasCustomName()) this.setCustomName(player.getStackInHand(hand).getName());
                 this.teleport(cagePos.getX() + 0.5, cagePos.getY() + 0.3, cagePos.getZ() + 0.5);
                 this.setVelocity(0, 0, 0);
                 this.setSitting(false);
@@ -39,8 +41,6 @@ public abstract class ParrotEntityMixin extends TameableShoulderEntity implement
                 cir.setReturnValue(ActionResult.SUCCESS);
             }
         }
-
-        
     }
 
     @Override
