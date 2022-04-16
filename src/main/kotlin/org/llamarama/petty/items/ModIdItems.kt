@@ -15,6 +15,7 @@ object ModIdItems {
 
     val COOL_ITEM: Item
     val CAGE_BLOCK_ITEM: BlockItem
+    val PARROT_FEATHER: Item
 
     /**
      * Register [net.minecraft.item.Item]'s in here.
@@ -22,6 +23,8 @@ object ModIdItems {
     init {
         COOL_ITEM = addItem("coolitem", Item(Item.Settings().maxCount(64).group(ItemGroup.MISC)))
         CAGE_BLOCK_ITEM = addItem("cage_block", BlockItem(ModIdBlocks.BIRD_CAGE, Item.Settings().maxCount(64).group(ItemGroup.MISC)))
+        PARROT_FEATHER = addItem("parrot_feather", Item(Item.Settings().maxCount(64).group(ItemGroup.MISC)))
+
     }
 
     private fun <I: Item> addItem(name: String, item: I): I {

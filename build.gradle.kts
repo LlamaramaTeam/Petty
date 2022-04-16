@@ -8,7 +8,7 @@ base {
     archivesName.set(archivesBaseName)
 }
 
-val javaVersion = JavaVersion.VERSION_16.toString()
+val javaVersion = JavaVersion.VERSION_17.toString()
 val modVersion: String by project
 val mavenGroup: String by project
 val minecraftVersion: String by project
