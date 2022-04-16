@@ -1,9 +1,11 @@
+@file:JvmName("PettyMain")
 package org.llamarama.petty
 
-import org.llamarama.petty.blocks.PettyBlocks
-import org.llamarama.petty.items.PettyItems
 import net.fabricmc.api.ModInitializer
+import org.llamarama.petty.blocks.registerBlocks
+import org.llamarama.petty.items.registerItems
 
+const val MOD_ID = "petty"
 
 /**
  * Main File
@@ -13,11 +15,10 @@ import net.fabricmc.api.ModInitializer
  */
 @Suppress("UNUSED")
 object MainFile : ModInitializer {
-    const val MOD_ID = "petty"
 
 
     override fun onInitialize() {
-        PettyBlocks.registerBlocks()
-        PettyItems.registerItems()
+        registerBlocks()
+        registerItems()
     }
 }
