@@ -13,8 +13,8 @@ import net.minecraft.util.ItemScatterer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import org.llamarama.petty.blocks.CageBlock;
-import org.llamarama.petty.blocks.ModIdBlocks;
-import org.llamarama.petty.items.ModIdItems;
+import org.llamarama.petty.blocks.PettyBlocks;
+import org.llamarama.petty.items.PettyItems;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
@@ -31,13 +31,13 @@ public abstract class ParrotEntityMixin extends TameableShoulderEntity implement
     @Inject(at = @At("HEAD"), method = "interactMob", cancellable = true)
     public void interactMob(PlayerEntity player, Hand hand, CallbackInfoReturnable<ActionResult> cir) {
         BlockPos cagePos = this.getBlockPos();
-        if (player.getStackInHand(hand).isOf(ModIdBlocks.INSTANCE.getBIRD_CAGE().asItem())) {
+        if (player.getStackInHand(hand).isOf(PettyBlocks.INSTANCE.getBIRD_CAGE().asItem())) {
             if (this.isSitting() || this.isInSittingPose()) {
                 if (player.getStackInHand(hand).hasCustomName()) this.setCustomName(player.getStackInHand(hand).getName());
                 this.teleport(cagePos.getX() + 0.5, cagePos.getY() + 0.3, cagePos.getZ() + 0.5);
                 this.setVelocity(0, 0, 0);
                 this.setSitting(false);
-                CageBlock.placeAt(world, ModIdBlocks.INSTANCE.getBIRD_CAGE().getDefaultState(), cagePos, 27);
+                CageBlock.placeAt(world, PettyBlocks.INSTANCE.getBIRD_CAGE().getDefaultState(), cagePos, 27);
                 cir.setReturnValue(ActionResult.SUCCESS);
             }
         }
@@ -46,9 +46,9 @@ public abstract class ParrotEntityMixin extends TameableShoulderEntity implement
     @Override
     public void tick() {
         if (featherDrop <= 0) {
-            if (world.getBlockState(this.getBlockPos().up()).isOf(ModIdBlocks.INSTANCE.getBIRD_CAGE())) {
+            if (world.getBlockState(this.getBlockPos().up()).isOf(PettyBlocks.INSTANCE.getBIRD_CAGE())) {
                 ItemScatterer.spawn(world, this.getBlockPos().getX(), this.getBlockPos().getY(), this.getBlockPos().getZ(),
-                        new ItemStack(ModIdItems.INSTANCE.getPARROT_FEATHER()));
+                        new ItemStack(PettyItems.INSTANCE.getPARROT_FEATHER()));
             }
             featherDrop = 4000 + random.nextInt(100);
         } else {

@@ -8,13 +8,13 @@ import net.minecraft.item.Item
 import net.minecraft.item.ItemGroup
 import net.minecraft.util.Identifier
 import net.minecraft.util.registry.Registry
-import org.llamarama.petty.blocks.ModIdBlocks
+import org.llamarama.petty.blocks.PettyBlocks
 
 object PettyItems {
     private val ItemRegistry = linkedMapOf<String, Item>()
 
     val COOL_ITEM: Item
-    val CAGE_BLOCK_ITEM: BlockItem
+    val CAGE_BLOCK_ITEM: Item
     val PARROT_FEATHER: Item
 
     /**
@@ -22,7 +22,7 @@ object PettyItems {
      */
     init {
         COOL_ITEM = addItem("coolitem", Item(Item.Settings().maxCount(64).group(ItemGroup.MISC)))
-        CAGE_BLOCK_ITEM = addItem("cage_block", BlockItem(ModIdBlocks.BIRD_CAGE, Item.Settings().maxCount(64).group(ItemGroup.MISC)))
+        CAGE_BLOCK_ITEM = addItem("cage_block", BlockItem(PettyBlocks.BIRD_CAGE, Item.Settings().maxCount(64).group(ItemGroup.MISC)))
         PARROT_FEATHER = addItem("parrot_feather", Item(Item.Settings().maxCount(64).group(ItemGroup.MISC)))
 
     }
