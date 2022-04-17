@@ -50,7 +50,7 @@ public abstract class ParrotEntityMixin extends TameableShoulderEntity implement
                 ItemScatterer.spawn(world, this.getBlockPos().getX(), this.getBlockPos().getY(), this.getBlockPos().getZ(),
                         new ItemStack(ModIdItems.INSTANCE.getPARROT_FEATHER()));
             }
-            featherDrop = 4000;
+            featherDrop = 4000 + random.nextInt(100);
         } else {
             featherDrop--;
         }

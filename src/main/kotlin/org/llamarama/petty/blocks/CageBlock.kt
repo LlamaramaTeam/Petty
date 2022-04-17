@@ -14,7 +14,7 @@ import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.BlockView
 import net.minecraft.world.World
 
-open class CageBlock(settings: Settings?) : TallPlantBlock(settings) {
+class CageBlock(settings: Settings?) : TallPlantBlock(settings) {
     private val half: EnumProperty<DoubleBlockHalf>? = Properties.DOUBLE_BLOCK_HALF
 
     private val topShape = VoxelShapes.union(

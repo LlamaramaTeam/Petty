@@ -17,7 +17,7 @@ object ModIdBlocks {
     private val BlockRegistry = linkedMapOf<String, Block>()
 
     val COOL_BLOCK: Block
-    val BIRD_CAGE: CageBlock
+    val BIRD_CAGE: Block
 
     /**
      * Register blocks in here.
@@ -37,7 +37,7 @@ object ModIdBlocks {
         return block
     }
 
-    private fun <B: Block> addSpecialItemBlock(name: String, block: B): B {
+    private fun addSpecialItemBlock(name: String, block: Block): Block {
         val correctedName = name.replace(" ", "").lowercase().trim()
         BlockRegistry[correctedName] = block
         return block
