@@ -4,15 +4,12 @@ import net.minecraft.block.BlockState
 import net.minecraft.block.ShapeContext
 import net.minecraft.block.TallPlantBlock
 import net.minecraft.block.enums.DoubleBlockHalf
-import net.minecraft.entity.Entity
-import net.minecraft.entity.passive.ParrotEntity
 import net.minecraft.state.property.EnumProperty
 import net.minecraft.state.property.Properties
 import net.minecraft.util.math.BlockPos
 import net.minecraft.util.shape.VoxelShape
 import net.minecraft.util.shape.VoxelShapes
 import net.minecraft.world.BlockView
-import net.minecraft.world.World
 
 class CageBlock(settings: Settings?) : TallPlantBlock(settings) {
     private val half: EnumProperty<DoubleBlockHalf>? = Properties.DOUBLE_BLOCK_HALF
