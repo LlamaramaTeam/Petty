@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
+
 plugins {
     id("fabric-loom") version "0.10-SNAPSHOT"
     val kotlinVersion: String by System.getProperties()
@@ -55,6 +57,7 @@ dependencies {
     includeModApi("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.1")
     includeModApi("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm:1.6.1")
     includeModApi("org.jetbrains.kotlinx:kotlinx-coroutines-jdk8:1.6.1")
+    implementation(kotlin("stdlib-jdk8"))
 }
 
 tasks {
@@ -82,3 +85,11 @@ tasks {
     }
 }
 
+val compileKotlin: KotlinCompile by tasks
+compileKotlin.kotlinOptions {
+    jvmTarget = "1.8"
+}
+val compileTestKotlin: KotlinCompile by tasks
+compileTestKotlin.kotlinOptions {
+    jvmTarget = "1.8"
+}

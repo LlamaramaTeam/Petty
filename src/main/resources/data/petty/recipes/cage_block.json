@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "#S#",
+    "#D#"
+  ],
+  "key": {
+    "#": {
+      "item": "minecraft:bamboo"
+    },
+    "S": {
+      "item": "minecraft:string"
+    },
+    "D": {
+      "item": "minecraft:dirt"
+    }
+  },
+  "result": {
+    "item": "petty:cage_block",
+    "count": 1
+  }
+}

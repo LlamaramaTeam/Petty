@@ -6,6 +6,7 @@ import org.llamarama.petty.MainFile
 import net.minecraft.block.AbstractBlock
 import net.minecraft.block.Block
 import net.minecraft.block.Blocks
+import net.minecraft.block.MapColor
 import net.minecraft.item.BlockItem
 import net.minecraft.item.Item
 import net.minecraft.item.ItemGroup
@@ -18,6 +19,7 @@ object PettyBlocks {
 
     val COOL_BLOCK: Block
     val BIRD_CAGE: Block
+    val PILLOW: Block
 
     /**
      * Register blocks in here.
@@ -26,7 +28,8 @@ object PettyBlocks {
      */
     init {
         COOL_BLOCK = addBlock("coolblock", Block(AbstractBlock.Settings.copy(Blocks.STONE)))
-        BIRD_CAGE = addSpecialItemBlock("cage_block", CageBlock(AbstractBlock.Settings.copy(Blocks.BAMBOO).breakInstantly()))
+        BIRD_CAGE = addSpecialItemBlock("cage_block", CageBlock(AbstractBlock.Settings.copy(Blocks.BAMBOO).breakInstantly().mapColor(MapColor.PALE_YELLOW)))
+        PILLOW = addBlock("pillow", PillowBlock(AbstractBlock.Settings.copy(Blocks.WHITE_WOOL)))
     }
 
     private fun addBlock(name: String, block: Block): Block {

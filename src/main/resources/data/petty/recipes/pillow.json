@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "#W#",
+    "#W#"
+  ],
+  "key": {
+    "#": {
+      "item": "petty:parrot_feather"
+    },
+    "W": {
+      "item": "minecraft:white_wool"
+    }
+  },
+  "result": {
+    "item": "petty:pillow",
+    "count": 1
+  }
+}
